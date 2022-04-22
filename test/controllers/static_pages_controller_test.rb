@@ -1,4 +1,6 @@
 require 'test_helper'
+require "minitest/reporters"
+Minitest::Reporters.use!
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   def setup
