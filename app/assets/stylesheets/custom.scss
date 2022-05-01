@@ -61,15 +61,16 @@ p {
     letter-spacing: -1px;
     padding-top: 9px;
     font-weight: bold;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
-#logo:hover {
-    color: #fff;
-    text-decoration: none;
-}
 
 /* footer */
 
+$light-gray: #777;
 footer {
     display: flex;
     justify-content: space-between;
@@ -81,44 +82,36 @@ footer {
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
     background-color: rgb(224, 153, 153);
-    color: #777;
-}
-
-.footer_small{
-    display: inline-flex;
-    text-align: center;
-    color: #777;
-    padding-top: 1rem;
-    padding-right: 1%;
-    padding-left: 10%;
-}
-.footer_nav{
-    display: inline-flex;
-    text-align: center;
-    color: #777;
-    padding-top: 1rem;
-    padding-right: 10%;
-    padding-left: 1%;
-}
-
-footer a {
-    color: #555;
-}
-
-footer a:hover {
-    color: #222;
-}
-
-footer small {
-    float: left;
-}
-
-footer ul {
-    float: right;
-    list-style: none;
-}
-
-footer ul li {
-    float: left;
-    margin-left: 15px;
+    color: $light-gray;
+    small{
+        display: inline-flex;
+        text-align: center;
+        color: $light-gray;
+        padding-top: 1rem;
+        padding-right: 1%;
+        padding-left: 10%;
+        float: left;
+    }
+    nav{
+        display: inline-flex;
+        text-align: center;
+        color: $light-gray;
+        padding-top: 1rem;
+        padding-right: 10%;
+        padding-left: 1%;
+    }
+    a {
+        color: #555;
+        &:hover {
+            color: #222;
+        }
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 15px;
+        }
+    }
 }
