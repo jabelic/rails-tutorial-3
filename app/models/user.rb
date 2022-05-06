@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    before_save { self.email = email.downcase! } #emailは大文字小文字を区別しない。`before_save {self.email = self.email.downcase! }`と等価
+    before_save { self.email = email.downcase } #emailは大文字小文字を区別しない。`before_save {self.email = self.email.downcase! }`と等価
     # \Aは先頭
     # https://qiita.com/jnchito/items/ea7832df6f64a9034872
     # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
