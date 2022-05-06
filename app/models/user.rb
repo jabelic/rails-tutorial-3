@@ -1,9 +1,4 @@
-require 'test_helper'
 class User < ApplicationRecord
-    def setup
-        @user = User.new(name: "Example User", email: "user@example.com")
-    end
-    test "should be valid" do
-        assert @user.valid?
-    end
+    validates(:name, presence: true ,length: { maximum: 50 })
+    validates :email, presence: true, length: { maximum: 255 }
 end
