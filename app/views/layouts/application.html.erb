@@ -14,8 +14,22 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%
+=begin%>
+ <div class="alert alert-<%= message_type %>"><%= message %></div> 
+<%
+=end%>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <%
+=begin%>
+二つとも同じ。erbとhtmlが混ざってしまうときに使う。
+<%
+=end%>
+      <% end %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
