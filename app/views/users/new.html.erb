@@ -1,9 +1,12 @@
+<% provide(:button_text, 'Create my account') %>
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <%
+=begin%>
+ <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'shared/error_messages' %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control'%>
@@ -18,6 +21,9 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
+    <% end %> 
+<%
+=end%>
+    <%= render 'form' %>
   </div>
 </div>
