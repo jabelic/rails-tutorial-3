@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      redirect_back_or user
       # remember user
-      redirect_to user
+      # redirect_to user
     else
       # flash.nowでリロードしたら消える
       flash.now[:danger] = 'Invalid email/password combination'
